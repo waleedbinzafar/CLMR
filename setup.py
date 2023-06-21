@@ -22,14 +22,15 @@ VERSION = "0.1.0"
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    "torch==1.9.0",
-    "torchaudio",
-    "simclr",
-    "torchaudio-augmentations",
-    "pytorch-lightning",
-    "soundfile",
-    "sklearn",
-    "matplotlib",
+    "torch==1.12.0",
+    "torchaudio==0.12.0",
+    "simclr==1.0.2",
+    "torchaudio-augmentations==0.2.4",
+    "torch-pitch-shift==1.2.4",
+    "pytorch-lightning==1.9.0",
+    "soundfile==0.12.1",
+    "scikit-learn==1.2.2",
+    "matplotlib==3.7.1",
 ]
 
 # What packages are optional?
