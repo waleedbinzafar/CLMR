@@ -28,8 +28,14 @@ class LinearEvaluation(LightningModule):
             self.model = nn.Sequential(nn.Linear(self.hidden_dim, self.output_dim))
         self.criterion = self.configure_criterion()
 
-        self.accuracy = torchmetrics.Accuracy()
-        self.average_precision = torchmetrics.AveragePrecision(pos_label=1)
+        self.accuracy = torchmetrics.Accuracy(
+            task="multilabel",
+            num_labels=output_dim
+        )
+        self.average_precision = torchmetrics.AveragePrecision(
+            task='multilabel',
+            num_labels=output_dim
+        )
 
     def forward(self, x: Tensor, y: Tensor) -> Tuple[Tensor, Tensor]:
         preds = self._forward_representations(x, y)
